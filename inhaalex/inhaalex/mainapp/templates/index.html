@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<script type="text/javascript" src="{{ STATIC_URL }}static/jquery-1.12.3.min.js"></script>
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% bootstrap_messages %}
+<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/static/css.css">
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading"><h3> voeg inhaalexamen toe </h3> </div>
+        <div class="panel-body">  
+             <form action="/" method="POST" class="log">
+                {% csrf_token %}
+                {% bootstrap_form addjson layout='inline' %}
+                {% buttons %}
+                    <button type="submit" name="submit" class="btn btn-primary">
+                        {% bootstrap_icon "log-in" %} Add
+                    </button>
+                {% endbuttons %}
+             </form>
+        </div>
+    </div>
+</div>
+<br>
